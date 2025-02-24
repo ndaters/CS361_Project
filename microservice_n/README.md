@@ -4,7 +4,7 @@
 
 Takes a request for a random number between 0 and the input value and returns a random number. 
 
-Requests are sent with socket.send(packed data)
+Requests and responses are sent through port 5555
 
 Packed data is created with:
 
@@ -12,6 +12,10 @@ Packed data is created with:
 import struct
 
 packed_data = struct.pack("i", integer_to_send)
+
+The request is sent with:
+
+socket.send(packed_data)
 
 
 The response is received with:
